@@ -1,9 +1,6 @@
-import twitter
-#api = twitter.Api(consumer_key=[consumer key],
-#                  consumer_secret=[consumer secret],
-#                  access_token_key=[access token],
-#                  access_token_secret=[access token secret])
-                  
+# Main class which returns the feed.xml
+import frontpageTweets
+
 class feed:
     title = "frontpages"
     link = "TBD"
@@ -15,14 +12,14 @@ class feed:
     imgWidth = "10"
     imgHeight = "10"
         
-    feedXML = "blah"
-
     def getFeedXML(self):
         xml = self.getXMLHeader() + self.getXMLBody() + self.getXMLFooter()
         return xml
 
     def getXMLBody(self):
         xmlBody = "<item><title></title><pubDate></pubDate><link></link><description><![CDATA[xxx]]></description></item>"
+        todaysTweets = frontpageTweets.todaysTweets()
+        #for loop on todaysTweets
         return xmlBody
 
     def getXMLHeader(self):

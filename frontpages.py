@@ -18,7 +18,7 @@ class feed:
 
     def getXMLBody(self):
         xmlBody = "<item><title></title><pubDate></pubDate><link></link><description><![CDATA[xxx]]></description></item>"
-        todaysTweets = frontpageTweets.todaysTweets()
+        todaysTweets = frontpageTweets.getTodaysTweets()
         #for loop on todaysTweets
         return xmlBody
 

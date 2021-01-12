@@ -1,30 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-    <channel>
-        <!-- constant -->
-        <title></title>
-        <link></link>
-        <description></description>
-        <language>en-us</language>
-        <image>
-            <title></title>
-            <link></link>
-            <url></url>
-            <width></width>
-            <height></height>
-        </image>
-        <!-- variable -->
-        <item>
-            <title></title>
-            <pubDate></pubDate>
-            <link></link>
-            <description><![CDATA[xxx]]></description>
-        </item>
-        <item>
-            <title></title>
-            <pubDate></pubDate>
-            <link></link>
-            <description><![CDATA[xxx]]></description>
-        </item>
-    </channel>
-</rss>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
+<title>frontpages</title>
+<link>https://twitter.com/hashtag/TomorrowsPapersToday?src=hashtag_click</link>
+<description>RSS feed showing today's hashtag TomorrowsPapersToday</description>
+<language>en-us</language>
+<image>
+   <title>frontpages</title>
+   <link>https://twitter.com/hashtag/TomorrowsPapersToday?src=hashtag_click</link>
+   <url>https://images.app.goo.gl/HA6GnKi1UTbHNYbd6</url>
+   <width>20</width>
+   <height>20</height>
+</image>
+<item>
+   <guid>https://t.co/k35AiW2qUk</guid>
+   <title>THE NATIONAL:Royals ignored Scots government appeal to scrap trip</title>
+   <pubDate>Mon, 11 Jan 2021 23:15:15 GMT</pubDate>
+   <link>https://t.co/k35AiW2qUk</link>
+   <description>THE NATIONAL:Royals ignored Scots government appeal to scrap trip <a href="https://t.co/k35AiW2qUk">https://t.co/k35AiW2qUk</a><img src="https://pbs.twimg.com/media/ErfLmP2XcAsaQaP.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/RMazKNgVze</guid>
+   <title>TIMES SCOTLAND: Scots being let down by failing test and trace</title>
+   <pubDate>Mon, 11 Jan 2021 23:14:10 GMT</pubDate>
+   <link>https://t.co/RMazKNgVze</link>
+   <description>TIMES SCOTLAND: Scots being let down by failing test and trace <a href="https://t.co/RMazKNgVze">https://t.co/RMazKNgVze</a><img src="https://pbs.twimg.com/media/ErfLWkYXAAI_f_L.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/GEcrHdgQWG</guid>
+   <title>THE SCOTSMAN; Half a million face weeks of waiting over vaccine delay</title>
+   <pubDate>Mon, 11 Jan 2021 23:13:22 GMT</pubDate>
+   <link>https://t.co/GEcrHdgQWG</link>
+   <description>THE SCOTSMAN; Half a million face weeks of waiting over vaccine delay <a href="https://t.co/GEcrHdgQWG">https://t.co/GEcrHdgQWG</a><img src="https://pbs.twimg.com/media/ErfLKtVXEAIj8tS.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/AV2wQlRt6e</guid>
+   <title>EDINBURGH EVENING NEWS: Must do better</title>
+   <pubDate>Mon, 11 Jan 2021 23:12:42 GMT</pubDate>
+   <link>https://t.co/AV2wQlRt6e</link>
+   <description>EDINBURGH EVENING NEWS: Must do better <a href="https://t.co/AV2wQlRt6e">https://t.co/AV2wQlRt6e</a><img src="https://pbs.twimg.com/media/ErfLA--XUAImTPH.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/R7xRsXIGAj</guid>
+   <title>MIRROR SPORT: Joy Division</title>
+   <pubDate>Mon, 11 Jan 2021 22:53:17 GMT</pubDate>
+   <link>https://t.co/R7xRsXIGAj</link>
+   <description>MIRROR SPORT: Joy Division <a href="https://t.co/R7xRsXIGAj">https://t.co/R7xRsXIGAj</a><img src="https://pbs.twimg.com/media/ErfGkcrXAAARjWr.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/KCrXXd1O7u</guid>
+   <title>MIRROR: Just get a grip</title>
+   <pubDate>Mon, 11 Jan 2021 22:52:30 GMT</pubDate>
+   <link>https://t.co/KCrXXd1O7u</link>
+   <description>MIRROR: Just get a grip <a href="https://t.co/KCrXXd1O7u">https://t.co/KCrXXd1O7u</a><img src="https://pbs.twimg.com/media/ErfGY_GW4AUt4_1.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/zVDbU1IYd0</guid>
+   <title>STAR SPORT: Silly huggers</title>
+   <pubDate>Mon, 11 Jan 2021 22:26:29 GMT</pubDate>
+   <link>https://t.co/zVDbU1IYd0</link>
+   <description>STAR SPORT: Silly huggers <a href="https://t.co/zVDbU1IYd0">https://t.co/zVDbU1IYd0</a><img src="https://pbs.twimg.com/media/ErfAb8NXIAAzOB8.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/Dm8WdlFdQS</guid>
+   <title>EXPRESS SPORT: Rugby forced to call a halt</title>
+   <pubDate>Mon, 11 Jan 2021 22:25:32 GMT</pubDate>
+   <link>https://t.co/Dm8WdlFdQS</link>
+   <description>EXPRESS SPORT: Rugby forced to call a halt <a href="https://t.co/Dm8WdlFdQS">https://t.co/Dm8WdlFdQS</a><img src="https://pbs.twimg.com/media/ErfAN-WXMAAZMB2.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/u6fTlxKT1w</guid>
+   <title>TELEGRAPH SPORT: Respect Covid rules or risk losing right to play, clubs told</title>
+   <pubDate>Mon, 11 Jan 2021 22:23:30 GMT</pubDate>
+   <link>https://t.co/u6fTlxKT1w</link>
+   <description>TELEGRAPH SPORT: Respect Covid rules or risk losing right to play, clubs told <a href="https://t.co/u6fTlxKT1w">https://t.co/u6fTlxKT1w</a><img src="https://pbs.twimg.com/media/Ere_wQ4XYAI8zOm.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/uv88jpxIEE</guid>
+   <title>STAR: Honk! Honk!</title>
+   <pubDate>Mon, 11 Jan 2021 22:21:42 GMT</pubDate>
+   <link>https://t.co/uv88jpxIEE</link>
+   <description>STAR: Honk! Honk! <a href="https://t.co/uv88jpxIEE">https://t.co/uv88jpxIEE</a><img src="https://pbs.twimg.com/media/Ere_V2-XEAEQ6jG.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/xauEjwZWEX</guid>
+   <title>EXPRESS: ‘Great British Summer’ on way...let’s not blow it</title>
+   <pubDate>Mon, 11 Jan 2021 22:20:41 GMT</pubDate>
+   <link>https://t.co/xauEjwZWEX</link>
+   <description>EXPRESS: ‘Great British Summer’ on way...let’s not blow it <a href="https://t.co/xauEjwZWEX">https://t.co/xauEjwZWEX</a><img src="https://pbs.twimg.com/media/Ere_G8lXIAAhsRb.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/bAsVq3bMdg</guid>
+   <title>MAIL: Are we headed for the 3M rule?</title>
+   <pubDate>Mon, 11 Jan 2021 22:19:26 GMT</pubDate>
+   <link>https://t.co/bAsVq3bMdg</link>
+   <description>MAIL: Are we headed for the 3M rule? <a href="https://t.co/bAsVq3bMdg">https://t.co/bAsVq3bMdg</a><img src="https://pbs.twimg.com/media/Ere-0w5WMAMCwG1.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/hQ6jPgs4jH</guid>
+   <title>METRO SPORT: Now José has his hands full</title>
+   <pubDate>Mon, 11 Jan 2021 22:18:33 GMT</pubDate>
+   <link>https://t.co/hQ6jPgs4jH</link>
+   <description>METRO SPORT: Now José has his hands full <a href="https://t.co/hQ6jPgs4jH">https://t.co/hQ6jPgs4jH</a><img src="https://pbs.twimg.com/media/Ere-nx1XIAQk9_O.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/8j7Gti8sui</guid>
+   <title>THE SUN: On the March</title>
+   <pubDate>Mon, 11 Jan 2021 22:17:52 GMT</pubDate>
+   <link>https://t.co/8j7Gti8sui</link>
+   <description>THE SUN: On the March <a href="https://t.co/8j7Gti8sui">https://t.co/8j7Gti8sui</a><img src="https://pbs.twimg.com/media/Ere-dk7XUAI8Zxw.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/e5IyQYxOWU</guid>
+   <title>THE GUARDIAN: Police defy ministers as clamour grows for new Covid restrictions</title>
+   <pubDate>Mon, 11 Jan 2021 22:14:14 GMT</pubDate>
+   <link>https://t.co/e5IyQYxOWU</link>
+   <description>THE GUARDIAN: Police defy ministers as clamour grows for new Covid restrictions <a href="https://t.co/e5IyQYxOWU">https://t.co/e5IyQYxOWU</a><img src="https://pbs.twimg.com/media/Ere9odtXIAAD-_7.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/TYKNh07e0u</guid>
+   <title>TELEGRAPH: Pressure on NHS for Covid vaccinations around the clock</title>
+   <pubDate>Mon, 11 Jan 2021 21:54:59 GMT</pubDate>
+   <link>https://t.co/TYKNh07e0u</link>
+   <description>TELEGRAPH: Pressure on NHS for Covid vaccinations around the clock <a href="https://t.co/TYKNh07e0u">https://t.co/TYKNh07e0u</a><img src="https://pbs.twimg.com/media/Ere5OeXXcAIwgGm.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/Zshs72GGo6</guid>
+   <title>I: 24/7 plan to meet target on vaccines</title>
+   <pubDate>Mon, 11 Jan 2021 21:49:31 GMT</pubDate>
+   <link>https://t.co/Zshs72GGo6</link>
+   <description>I: 24/7 plan to meet target on vaccines <a href="https://t.co/Zshs72GGo6">https://t.co/Zshs72GGo6</a><img src="https://pbs.twimg.com/media/Ere3-a9XUAIF8ZA.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/dgTD3r6kxk</guid>
+   <title>YORKSHIRE POST: ⁦@MattHancock⁩ says pharmacies could be key in jab roll out</title>
+   <pubDate>Mon, 11 Jan 2021 21:48:10 GMT</pubDate>
+   <link>https://t.co/dgTD3r6kxk</link>
+   <description>YORKSHIRE POST: ⁦@MattHancock⁩ says pharmacies could be key in jab roll out <a href="https://t.co/dgTD3r6kxk">https://t.co/dgTD3r6kxk</a><img src="https://pbs.twimg.com/media/Ere3ql2XAAAcavW.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/vPVWmua06F</guid>
+   <title>METRO: Careless talk costs lives</title>
+   <pubDate>Mon, 11 Jan 2021 21:16:20 GMT</pubDate>
+   <link>https://t.co/vPVWmua06F</link>
+   <description>METRO: Careless talk costs lives <a href="https://t.co/vPVWmua06F">https://t.co/vPVWmua06F</a><img src="https://pbs.twimg.com/media/ErewYMeXcAITGe4.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/0Z9Aj4GbBB</guid>
+   <title>FT FRONT: Northern Ireland shoppers face empty shelves as Brexit snags supply chains</title>
+   <pubDate>Mon, 11 Jan 2021 20:50:37 GMT</pubDate>
+   <link>https://t.co/0Z9Aj4GbBB</link>
+   <description>FT FRONT: Northern Ireland shoppers face empty shelves as Brexit snags supply chains <a href="https://t.co/0Z9Aj4GbBB">https://t.co/0Z9Aj4GbBB</a><img src="https://pbs.twimg.com/media/EreqflhWMAA9-eE.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/xUJaX5wYF3</guid>
+   <title>FT UK: Merkel attacks Twitter’s ban on Trump as breach of free speech</title>
+   <pubDate>Mon, 11 Jan 2021 20:48:01 GMT</pubDate>
+   <link>https://t.co/xUJaX5wYF3</link>
+   <description>FT UK: Merkel attacks Twitter’s ban on Trump as breach of free speech <a href="https://t.co/xUJaX5wYF3">https://t.co/xUJaX5wYF3</a><img src="https://pbs.twimg.com/media/Erep5m0XUAkVQCT.jpg"/></description>
+</item>
+<item>
+   <guid>https://t.co/grzN2aCqsM</guid>
+   <title>MORNING STAR: Labour backs paid time off to get the jab</title>
+   <pubDate>Mon, 11 Jan 2021 19:09:29 GMT</pubDate>
+   <link>https://t.co/grzN2aCqsM</link>
+   <description>MORNING STAR: Labour backs paid time off to get the jab <a href="https://t.co/grzN2aCqsM">https://t.co/grzN2aCqsM</a><img src="https://pbs.twimg.com/media/EreTV_UW4A4tUU9.jpg"/></description>
+</item>
+</channel></rss>

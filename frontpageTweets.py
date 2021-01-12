@@ -10,6 +10,7 @@ def getTodaysTweets():
     url = create_url()
     headers = create_headers()
     json_response = connectToTwitter(url, headers)
+    print(json.dumps(json_response, indent=4, sort_keys=True))
     return json_response
 
 

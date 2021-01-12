@@ -10,16 +10,17 @@ def getTodaysTweets():
     url = create_url()
     headers = create_headers()
     json_response = connectToTwitter(url, headers)
-    print(json.dumps(json_response, indent=4, sort_keys=True))
+    return json_response
 
 
 def create_url():
     oneDayAgo = datetime.datetime.today() - datetime.timedelta(days=1, hours=8)
     query = "(from:AllieHBNews OR from:hendopolis OR from:BBCHelena) TomorrowsPapersToday -is:retweet has:images&max_results=30&start_time=" + oneDayAgo.isoformat() + "Z"
-    tweet_fields = "tweet.fields=attachments,author_id"
+    tweet_fields = "tweet.fields=attachments,author_id,created_at"
     media_fields = "media.fields=height,url,width"
+    expansion_fields = "expansions=attachments.media_keys"
     #TODO need to pull more attributes to get the images: https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
-    url = "https://api.twitter.com/2/tweets/search/recent?query={}&{}&{}".format(query, tweet_fields, media_fields)
+    url = "https://api.twitter.com/2/tweets/search/recent?query={}&{}&{}&{}".format(query, tweet_fields, media_fields, expansion_fields)
     print(url)
     return url
 

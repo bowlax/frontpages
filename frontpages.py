@@ -17,13 +17,29 @@ class feed:
         return xml
 
     def getXMLBody(self):
-        xmlBody = "<item><title></title><pubDate></pubDate><link></link><description><![CDATA[xxx]]></description></item>"
+        xmlBody = ""
         todaysTweets = frontpageTweets.getTodaysTweets()
-        #for loop on todaysTweets
+        for i in todaysTweets['data']:
+            text = i["text"]
+            tweet = text[0:text.find('#')-1]
+            link = text[text.find('http'):]
+            print(link)
+
+            xmlBody = xmlBody + "<item><title>" + tweet + "</title>"
+#            xmlBody = xmlBody + "<pubDate>" + print(i["created_at"]) + "</pubDate>"
+            xmlBody = xmlBody + "<link>" + link + "</link>"
+            xmlBody = xmlBody + "<description><![CDATA[" + tweet + "]]></description>"
+            xmlBody = xmlBody + "</item>"
+
+        print(xmlBody)
         return xmlBody
 
     def getXMLHeader(self):
-        xmlHeader = "<?xml version=\"1.0\" encoding=\"utf-8\"?><rss version=\"2.0\"><channel>"
+#        xmlHeader = "HTTP/1.1 200 OK\nCache-Control: private, s-maxage=0\nContent-Type: application/xml; charset=utf-8\nServer: Microsoft-IIS/8.0n"
+#        xmlHeader = xmlHeader + "<?xml version=\"1.0\" encoding=\"UTF-8\"?><rss version=\"2.0\"><channel>"
+        xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+
+        xmlHeader = xmlHeader + "<rss version=\"2.0\"><channel>"
         xmlHeader = xmlHeader + "<title>" + self.title + "</title>"
         xmlHeader = xmlHeader + "<link>" + self.link + "</link>"
         xmlHeader = xmlHeader + "<description>" + self.desc + "</description>"

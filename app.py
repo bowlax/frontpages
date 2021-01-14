@@ -1,11 +1,21 @@
 from frontpages import feed
-from flask import Flask
-app = Flask(__name__)
+import flask
+app = flask.Flask(__name__)
 
-@app.route("/ping")
+@app.route("/ping") # is it up
 def ping():
     return "ping returned"
 
-@app.route("/")
+@app.route("/feed.xml") # for reading in an rss reader
 def feedXML():
-    return feed().getFeedXML()
+    response = flask.make_response(feed().getFeedXML())
+    response.headers['Content-Type'] = "application/rss+xml"
+    response.headers['charset'] = "utf-8"
+    return response
+    
+@app.route("/") # for testing in a browser
+def index():
+    response = flask.make_response(feed().getFeedXML())
+    response.headers['Content-Type'] = "application/xml"
+    response.headers['charset'] = "utf-8"
+    return response

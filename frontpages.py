@@ -24,29 +24,30 @@ class feed:
         xmlBody = ""
         #read updates from the last time the XML got built, then reset
         todaysTweets = frontpageTweets.getTodaysTweets(self.lastBuildDate)
-        self.lastBuildDate = datetime.datetime.today()
+        self.lastBuildDate = datetime.datetime.today() - datetime.timedelta(hours=8, minutes=1) #timezones
         
-        #build a dictionary of the imageUrl by the media_key
-        image_dict = {}
-        image_json = todaysTweets["includes"]["media"]
-        for j in image_json:
-            image_dict[j["media_key"]] = j["url"]
+        if todaysTweets['meta']['result_count'] > 0:
+            #build a dictionary of the imageUrl by the media_key
+            image_dict = {}
+            image_json = todaysTweets["includes"]["media"]
+            for j in image_json:
+                image_dict[j["media_key"]] = j["url"]
 
-        #create an rss <item> for each tweet
-        for i in todaysTweets['data']:
-            text = i["text"]
-            tweet = text[0:text.find('#')-1] #parse out the headline, ignore the hashtag
-            link = text[text.find('http'):] #parse out the url that twitter provides at the end of the text
+            #create an rss <item> for each tweet
+            for i in todaysTweets['data']:
+                text = i["text"]
+                tweet = text[0:text.find('#')-1] #parse out the headline, ignore the hashtag
+                link = text[text.find('http'):] #parse out the url that twitter provides at the end of the text
 
-            xmlBody = xmlBody + "<item>"
-            xmlBody = xmlBody + "<guid isPermaLink=\"true\">" + link + "</guid>" #url is the permalink
-            xmlBody = xmlBody + "<title><![CDATA[" + tweet + "]]></title>" #headline
-            xmlBody = xmlBody + "<pubDate>" + self.isoDateToRFC822(i["created_at"]) + " GMT</pubDate>" #format the date
-            xmlBody = xmlBody + "<link>" + link + "</link>" #url is also the tweet link (obvs)
-            imgUrl = image_dict[i["attachments"]["media_keys"][0]] # get the front page image url
-            xmlBody = xmlBody + "<enclosure url=\"" + imgUrl + "\" length=\"0\" type=\"image/jpeg\" />" #some readers use enclosure
-            xmlBody = xmlBody + "<description><![CDATA[ <a href=\"" + link + "\">" + tweet + "</a> <br /> <img src=\"" + imgUrl + "\" /> ]]></description>" #some use the desc
-            xmlBody = xmlBody + "</item>"
+                xmlBody = xmlBody + "<item>"
+                xmlBody = xmlBody + "<guid isPermaLink=\"true\">" + link + "</guid>" #url is the permalink
+                xmlBody = xmlBody + "<title><![CDATA[" + tweet + "]]></title>" #headline
+                xmlBody = xmlBody + "<pubDate>" + self.isoDateToRFC822(i["created_at"]) + " GMT</pubDate>" #format the date
+                xmlBody = xmlBody + "<link>" + link + "</link>" #url is also the tweet link (obvs)
+                imgUrl = image_dict[i["attachments"]["media_keys"][0]] # get the front page image url
+                xmlBody = xmlBody + "<enclosure url=\"" + imgUrl + "\" length=\"0\" type=\"image/jpeg\" />" #some readers use enclosure
+                xmlBody = xmlBody + "<description><![CDATA[ <a href=\"" + link + "\">" + tweet + "</a> <br /> <img src=\"" + imgUrl + "\" /> ]]></description>" #some use the desc
+                xmlBody = xmlBody + "</item>"
 
         return xmlBody
 
@@ -60,7 +61,7 @@ class feed:
         xmlHeader = xmlHeader + "<description>" + self.desc + "</description>"
         xmlHeader = xmlHeader + "<language>" + self.language + "</language>"
         xmlHeader = xmlHeader + "<lastBuildDate>" + self.isoDateToRFC822(self.lastBuildDate.isoformat() + "Z") + "</lastBuildDate>" # hacking on a Z so the parsing works
-        xmlHeader = xmlHeader + "<ttl>1</ttl>" #minutes
+        xmlHeader = xmlHeader + "<ttl>60</ttl>" #minutes, realistically this can be higher, low for testing now
         xmlHeader = xmlHeader + "<image>"
         xmlHeader = xmlHeader + "<title>" + self.title + "</title>"
         xmlHeader = xmlHeader + "<link>" + self.imgLink + "</link>"

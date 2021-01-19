@@ -15,11 +15,12 @@ def getTodaysTweets(lastBuildDate):
 
 
 def create_url(lastBuildDate):
-    query = "(from:AllieHBNews OR from:hendopolis OR from:BBCHelena) TomorrowsPapersToday -is:retweet has:images&max_results=30&start_time=" + lastBuildDate.isoformat() + "Z"
+    query = "(from:AllieHBNews OR from:hendopolis OR from:BBCHelena OR from:MsHelicat) TomorrowsPapersToday -is:retweet has:images&max_results=50&start_time=" + lastBuildDate.isoformat() + "Z"
     tweet_fields = "tweet.fields=attachments,author_id,created_at"
+    user_fields = "user.fields=username"
     media_fields = "media.fields=height,url,width"
-    expansion_fields = "expansions=attachments.media_keys"
-    url = "https://api.twitter.com/2/tweets/search/recent?query={}&{}&{}&{}".format(query, tweet_fields, media_fields, expansion_fields)
+    expansion_fields = "expansions=attachments.media_keys,author_id"
+    url = "https://api.twitter.com/2/tweets/search/recent?query={}&{}&{}&{}&{}".format(query, tweet_fields, user_fields, media_fields, expansion_fields)
     print(url)
     return url
 

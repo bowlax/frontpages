@@ -16,22 +16,21 @@ class feed:
 
     def getFeedXML(self):
         xml = self.getXMLHeader() + self.getXMLBody() + self.getXMLFooter()
-#        print(xml)
+        # print(xml)
         return xml
 
 
     def getXMLBody(self):
         xmlBody = ""
-        #read updates from the last time the XML got built, then reset
+        #read updates from the last time the XML got built
         todaysTweets = frontpageTweets.getTodaysTweets(self.lastBuildDate)
-        self.lastBuildDate = datetime.datetime.today() - datetime.timedelta(hours=8, minutes=1) #timezones
         
         if todaysTweets['meta']['result_count'] > 0:
+            #build a dictionary of the users by the id
+            user_dict = self.buildDictFromJSON(todaysTweets["includes"]["users"], "id", "username")
+
             #build a dictionary of the imageUrl by the media_key
-            image_dict = {}
-            image_json = todaysTweets["includes"]["media"]
-            for j in image_json:
-                image_dict[j["media_key"]] = j["url"]
+            image_dict = self.buildDictFromJSON(todaysTweets["includes"]["media"], "media_key", "url")
 
             #create an rss <item> for each tweet
             for i in todaysTweets['data']:
@@ -46,9 +45,11 @@ class feed:
                 xmlBody = xmlBody + "<link>" + link + "</link>" #url is also the tweet link (obvs)
                 imgUrl = image_dict[i["attachments"]["media_keys"][0]] # get the front page image url
                 xmlBody = xmlBody + "<enclosure url=\"" + imgUrl + "\" length=\"0\" type=\"image/jpeg\" />" #some readers use enclosure
-                xmlBody = xmlBody + "<description><![CDATA[ <a href=\"" + link + "\">" + tweet + "</a> <br /> <img src=\"" + imgUrl + "\" /> ]]></description>" #some use the desc
+                xmlBody = xmlBody + "<description><![CDATA[ <a href=\"" + link + "\">" + tweet + " (" + user_dict[i["author_id"]] + ")</a> <br /> <img src=\"" + imgUrl + "\" /> ]]></description>" #some use the desc
                 xmlBody = xmlBody + "</item>"
 
+        #set the lastBuildDate to now - 8 hours (timezone) - 1 minute (Twitter rules, start time should be > 10s from now)
+        self.lastBuildDate = datetime.datetime.today() - datetime.timedelta(hours=8, minutes=1) #timezones
         return xmlBody
 
     def getXMLHeader(self):
@@ -77,4 +78,14 @@ class feed:
 
     def isoDateToRFC822(self, d):
         return datetime.datetime.strptime(d, '%Y-%m-%dT%H:%M:%S.%fZ').strftime('%a, %d %b %Y %H:%M:%S')
+
+    def buildDictFromJSON(self, jsonobj, key, value):
+        #build a k-v dictionary from the json obj
+        dictionary = {}
+        for j in jsonobj:
+            try:
+                dictionary[j[key]] = j[value]
+            except KeyError:
+                dictionary[j[key]] = ""
+        return dictionary
 
